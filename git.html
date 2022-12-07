@@ -1,0 +1,53 @@
+<style>
+body {
+	background: url('./res/bg.png');
+	font-size: 1.2em;
+	max-width: 800px;
+	font-family: serif;
+	margin: auto;
+}
+</style>
+
+<br/><a href="./index.html"><img src='./res/BACK.gif' alt='Back to home page'/></a>
+<h2> Annada's git notes</h2>
+<span class='emph'> <b>Last updated:</b> Monday, Dec 5<sup>th</sup>, 2020</span>
+<hr>
+
+<h3> Table of contents </h3>
+<ol>
+	<li><a href="#diff"><code> git diff </code> - See difference between two files</a>
+</ol>
+
+<h3 id="diff"> <code> git diff </code> - See difference between two files </h3>
+
+<p> Without any flags or options, the <code>git diff</code> command
+will show the differences in any file that are in the current working
+directory and the staging area. The output of the command is a patch file,
+similar to the <code>diff</code> Linux/Unix command. Any difference can be
+then patched with the <code>patch</code> command.
+
+<ul>
+<li> <code>git diff</code><br>
+Show the diff of all files in the  <b>working directory</b> and
+<b>staging area</b>.
+<li> <code>git diff --cached</code> (or <code>--staged</code>)<br/>
+See the diff of all files in the <b>staging area</b> and the most recent <b>commit</b>.
+<li> <code>git diff c1ab343 4ab43ed</code><br/>
+Diff of all files in <b>commit c1ab343</b> and <b>commit 4ab43ed</b>
+<li> <code>git diff c1ab343 4ab43ed filename</code><br/>
+<code>git diff c1ab343:filename 4ab43ed:filename</code><br/>
+Same as above but <b>only for filename</b>.
+<li> <code>git diff HEAD^ [filename]</code><br/>
+<code>git diff HEAD~3 HEAD [filename]</code><br/>
+Also works with <b>relative references.</b>
+<li> <code>git diff @~4.. &gt; patchfile
+<br> patch patchfile </code>
+Save the diff as a patch file and apply the patch.
+
+</ul>
+
+<p><b>Note:</b> (1) Old revisions must comes first for the + and -
+in the patch file to be applied properly by <code>patch</code> util.
+(2) Git needs two commits or the stage for diff and will accept
+a range of commits but it will igonre the rest!
+

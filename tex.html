@@ -1,0 +1,56 @@
+<style>
+body {
+	background: url('./res/bg.png');
+	font-size: 1.1em;
+	max-width: 800px;
+	font-family: serif;
+	margin: auto;
+}
+</style>
+
+<br/><a href="./index.html"><img src='./res/BACK.gif' alt='Back to home page'/></a>
+<h2> Annada's LaTeX notes</h2>
+<span class='emph'> <b>Last updated:</b> Tuesday, Dec 6<sup>th</sup>, 2020</span>
+<hr>
+
+<h3> Table of contents </h3>
+<ol>
+	<li><a href="#pgf-styles">Styles in TikZ/PGF</a>
+</ol>
+
+<h3 id="pgf-styles">Styles in TikZ/PGF</h3>
+<p>To make diagrams uniform and make it easier to change later, styles can
+be added like below. Consider the following TikZ snippet,
+
+<p><code><pre>
+\begin{tikzpicture}
+\path
+	(3, 0) node[draw, circle, inner sep=3pt]{}
+	(2, 1) node[draw, circle, inner sep=3pt]{}
+	(1, 2) node[draw, circle, inner sep=3pt]{}
+	(0, 3) node[draw, circle, inner sep=3pt]{} ;
+\end{tikzpicture}
+</pre></code>
+
+Now if want to change the circle to a rectangle, we have to change every instance
+of the circle. By defining styles, we can do all the changes at once by changing
+the definition.
+
+<p><code><pre>
+\begin{tikzpicture}
+[style name/.style = { draw, circle, inner sep=3pt,}, ]
+\path
+	(3, 0) node[style name]{}
+	(2, 1) node[style name]{}
+	(1, 2) node[style name]{}
+	(0, 3) node[style name]{} ;
+\end{tikzpicture}
+</pre></code>
+
+And now all we need to do is change to, <code>
+[style name/.style = { draw, rectangle, inner sep=3pt,}, ]</code>
+
+
+
+
+
