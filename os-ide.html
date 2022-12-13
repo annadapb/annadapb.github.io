@@ -1,0 +1,74 @@
+<style>
+body {
+	max-width: 800px;
+	font-family: serif;
+	padding: 5%;
+	margin: auto;
+}
+</style>
+
+<br/><a href="./index.html"><img src='./res/BACK.gif' alt='Back to home page'/></a>
+<h2>Operating System as IDE</h2>
+<span class='emph'> <b>Last updated:</b> Tuesday, Dec 13<sup>th</sup>, 2020</span>
+<hr>
+<p>Integrated Development Environment, or IDE, are supposed to be a
+environment that provides useful tools and utilities for development (of
+software, and other works).  The environment could be a single piece of
+monolithic software that people run, like say MS VSCode, PyCharm, Eclipse,
+etc. But there is no reason Linux cannot be a <i>IDE</i>. Unfortunately,
+the word IDE has now been hijacked to mean monolithic software and that
+<i>Linux is a IDE</i> feels wrong.
+
+<p>I would argue, knowing way around in Linux makes it so much better as
+an IDE than anything out there. An IDE has some very important parts like
+a text editor, a file manager, source control management, etc. So does
+Linux and it excels in it.  Want a text editor, choose from hundreds
+of option. Want a file manager, hundreds of option. Same for others,
+hundreds of tools for any conceivable task, even for something
+that is generally not considered as a part of IDE. The OS acts as
+a glue, putting it all together. And customize to all your liking. I
+believe that was how computers were meant to be used and how old-school
+developers used it.
+
+<p>I would go as far as to argue that using a "IDE" on top of your
+operating system is, in fact, detrimental. The developer now has two
+environment taking their cognitive space. Using the operating system
+makes it more coherent and has less congnitive load. Here are a few
+tips and tricks to use Linux as a IDE. Most of my interaction with the
+operating system happens with the keyboards. So, this is a very keyboard
+oriented advice.
+
+<h3> Table of contents </h3>
+<ol>
+	<li><a href='#img-view'>kakoune - Text Editor</a>
+	<li><a href='#img-view'>git - Source Code Management</a>
+	<li><a href='#img-view'>inotifytools - Compiling at save</a>
+	<li><a href='#img-view'>zathura - PDF/DJVU Document Viewer</a>
+	<li><a href='#img-view'>imv - X11/Wayland Image Viewer</a>
+</ol>
+
+<h3 id="img-view">imv - X11/Wayland Image Viewer</h3>
+For images, I have found <a href='https://sr.ht/~exec64/imv/'>imv</a> to be
+suitable for all my needs. And most importantly it uses vi-keybindings,
+auto-reload and minimal UI. Most of my image related tasks comes down
+to writing a piece of code that generated a image and looking at the
+image if it is correct, or looking at the pixels.
+
+Image viewers are mostly mouse-related programs. But imv provides good
+vi-like keybindings for working and therefore, it lets me keep my hands
+on the keyboards.
+
+Here are some keybinding:
+<table style='border-collapse: collapse; margin: auto;'>
+<thead align='left'>
+<tr style='border-bottom: 1px dotted black;'>
+	<th width='100px'>key <th width='200px'>description
+<tbody>
+	<tr><td>h, j, k, l<td> Pan image
+	<tr><td>i, o, r<td>Zoom in/out, reset
+	<tr><td>c-r <td>Rotate image
+	<tr><td>f, d<td>Toggle fullscreen/overlay
+	<tr><td>x, q<td>Close/Quit
+</table>
+imv loads any config located <code>~/.config/imv/config</code>.
+
